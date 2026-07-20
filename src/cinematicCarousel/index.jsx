@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { carouselSlides } from "./data";
 import { developerDetails } from "./developer";
-import logoBlackBg from "./images/logoBlackBg.png";
 import { Styled } from "./styled";
 
+const LOGO_URL = `${import.meta.env.BASE_URL}images/logoBlackBg.png`;
 const AUTO_PLAY_DELAY = 7000;
 const SWIPE_THRESHOLD = 60;
 
@@ -474,7 +474,7 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
                         onClick={openDeveloperModal}
                     >
                         <Styled.BrandMark aria-hidden="true">
-                            <img src={logoBlackBg} alt="" />
+                            <img src={LOGO_URL} alt="" />
                         </Styled.BrandMark>
 
                         <Styled.BrandCopy>
@@ -755,7 +755,7 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
                         <Styled.DeveloperModalHeader>
                             <Styled.DeveloperIdentity>
                                 <Styled.DeveloperLogo>
-                                    <img src={logoBlackBg} alt="" />
+                                    <img src={LOGO_URL} alt="" />
                                 </Styled.DeveloperLogo>
 
                                 <Styled.DeveloperIntro>
