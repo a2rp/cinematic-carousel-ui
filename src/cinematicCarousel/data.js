@@ -1,0 +1,126 @@
+import afterlightImage from "./images/photo-1519681393784-d120267933ba.avif";
+import lastSignalImage from "./images/photo-1464822759023-fed622ff2c3b.avif";
+import meridianZeroImage from "./images/photo-1493246507139-91e8fad9978e.avif";
+import silentTideImage from "./images/photo-1518837695005-2083093ee35b.avif";
+import blackOrbitImage from "./images/photo-1500530855697-b586d89ba3ee.avif";
+import northOfNowhereImage from "./images/photo-1470770841072-f978cf4d019e.avif";
+
+export const carouselSlides = [
+    {
+        id: "afterlight-protocol",
+        eyebrow: "A cinematic original",
+        title: "Afterlight",
+        titleAccent: "Protocol",
+        description:
+            "A deep-space navigator wakes to a fractured signal carrying coordinates from a world erased from every known star map.",
+        year: "2026",
+        duration: "2h 14m",
+        rating: "U/A 16+",
+        quality: "4K",
+        genres: ["Science Fiction", "Mystery", "Drama"],
+        primaryAction: "Explore Story",
+        secondaryAction: "Watch Trailer",
+        image: afterlightImage,
+        imageAlt:
+            "A dark mountain landscape beneath a dramatic star-filled sky",
+        imagePosition: "center center",
+        theme: "ice",
+    },
+    {
+        id: "the-last-signal",
+        eyebrow: "Now streaming",
+        title: "The Last",
+        titleAccent: "Signal",
+        description:
+            "When every communication network goes silent, a lone radio engineer discovers one transmission that should not exist.",
+        year: "2026",
+        duration: "8 Episodes",
+        rating: "U/A 16+",
+        quality: "HDR",
+        genres: ["Thriller", "Mystery", "Science Fiction"],
+        primaryAction: "Start Watching",
+        secondaryAction: "View Details",
+        image: lastSignalImage,
+        imageAlt:
+            "A vast cinematic mountain range covered with drifting clouds",
+        imagePosition: "center center",
+        theme: "silver",
+    },
+    {
+        id: "meridian-zero",
+        eyebrow: "Featured premiere",
+        title: "Meridian",
+        titleAccent: "Zero",
+        description:
+            "An elite expedition crosses the final uncharted boundary in search of a discovery powerful enough to reshape civilization.",
+        year: "2025",
+        duration: "1h 58m",
+        rating: "U/A 13+",
+        quality: "4K",
+        genres: ["Adventure", "Survival", "Drama"],
+        primaryAction: "Discover More",
+        secondaryAction: "Watch Preview",
+        image: meridianZeroImage,
+        imageAlt: "A lone traveler overlooking a cinematic mountain wilderness",
+        imagePosition: "center center",
+        theme: "amber",
+    },
+    {
+        id: "silent-tide",
+        eyebrow: "Critically acclaimed",
+        title: "Silent",
+        titleAccent: "Tide",
+        description:
+            "A marine researcher follows an impossible current into a submerged world where nature has evolved without human interference.",
+        year: "2025",
+        duration: "2h 06m",
+        rating: "U/A 13+",
+        quality: "Dolby Vision",
+        genres: ["Mystery", "Adventure", "Drama"],
+        primaryAction: "Enter The Story",
+        secondaryAction: "Behind The Scenes",
+        image: silentTideImage,
+        imageAlt:
+            "Dark ocean water reflecting light beneath a dramatic horizon",
+        imagePosition: "center center",
+        theme: "ocean",
+    },
+    {
+        id: "black-orbit",
+        eyebrow: "Exclusive series",
+        title: "Black",
+        titleAccent: "Orbit",
+        description:
+            "A damaged orbital station begins transmitting memories belonging to people who have never stepped aboard it.",
+        year: "2026",
+        duration: "6 Episodes",
+        rating: "A",
+        quality: "4K HDR",
+        genres: ["Science Fiction", "Psychological", "Thriller"],
+        primaryAction: "Watch Episode One",
+        secondaryAction: "Series Details",
+        image: blackOrbitImage,
+        imageAlt: "A dark atmospheric landscape with mist and distant light",
+        imagePosition: "center center",
+        theme: "violet",
+    },
+    {
+        id: "north-of-nowhere",
+        eyebrow: "Audience favourite",
+        title: "North of",
+        titleAccent: "Nowhere",
+        description:
+            "Stranded beyond the last marked road, five strangers must survive a winter that appears to be changing time itself.",
+        year: "2024",
+        duration: "2h 21m",
+        rating: "U/A 16+",
+        quality: "Ultra HD",
+        genres: ["Survival", "Thriller", "Drama"],
+        primaryAction: "Begin Journey",
+        secondaryAction: "Watch Trailer",
+        image: northOfNowhereImage,
+        imageAlt: "A remote mountain lake surrounded by dramatic wilderness",
+        imagePosition: "center center",
+        theme: "forest",
+    },
+];
