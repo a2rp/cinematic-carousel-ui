@@ -2,6 +2,8 @@
 
 A premium cinematic carousel built with React, Vite, and styled-components.
 
+![alt text](preview.png)
+
 ## Features
 
 - Smooth cinematic transitions
