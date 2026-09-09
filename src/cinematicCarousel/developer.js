@@ -38,12 +38,22 @@ export const developerDetails = {
         {
             id: "youtube",
             label: "YouTube",
-            url: "https://www.youtube.com/@ashishranjan-ashz",
+            url: "https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1",
         },
         {
             id: "support",
             label: "Support My Work",
             url: "https://a2rp-donation-page.netlify.app/",
+        },
+        {
+            id: "email",
+            label: "Email",
+            url: "mailto:ash.ranjan09@gmail.com",
+        },
+        {
+            id: "patreon",
+            label: "Patreon",
+            url: "https://www.patreon.com/a2rp",
         },
     ],
 };
