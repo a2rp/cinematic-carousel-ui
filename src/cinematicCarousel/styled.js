@@ -951,7 +951,7 @@ export const Styled = {
         position: relative;
         z-index: 10;
         display: grid;
-        grid-template-columns: minmax(130px, 1fr) minmax(220px, 360px) auto;
+        grid-template-columns: minmax(130px, 1fr) minmax(220px, 360px) auto minmax(250px, auto);
         align-items: center;
         gap: clamp(24px, 4vw, 62px);
         padding-top: 21px;
@@ -1098,6 +1098,44 @@ export const Styled = {
 
         &:active {
             transform: translateY(0) scale(0.94);
+        }
+    `,
+
+    FooterLinks: styled.nav`
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 6px;
+
+        @media (max-width: 720px) {
+            grid-column: 1 / -1;
+            grid-row: 3;
+            justify-content: flex-start;
+        }
+    `,
+
+    FooterLink: styled.a`
+        display: grid;
+        width: 29px;
+        height: 29px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 8px;
+        color: rgba(255, 255, 255, 0.62);
+        background: rgba(6, 8, 10, 0.34);
+        place-items: center;
+        transition: border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--accent);
+            color: var(--accent-strong);
+            box-shadow: 0 0 16px var(--accent-soft);
+            outline: none;
         }
     `,
 

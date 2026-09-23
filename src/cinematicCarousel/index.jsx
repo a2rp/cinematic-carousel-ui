@@ -1,4 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { FaFacebookF, FaGithub, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FiCode, FiCoffee, FiGlobe, FiLifeBuoy, FiMail } from "react-icons/fi";
+import { SiPatreon } from "react-icons/si";
 import { carouselSlides } from "./data";
 import { developerDetails } from "./developer";
 import { Styled } from "./styled";
@@ -24,6 +27,19 @@ const MODAL_FOCUSABLE_SELECTOR = [
     "select:not([disabled])",
     '[tabindex]:not([tabindex="-1"])',
 ].join(", ");
+
+const footerLinks = [
+    { label: "Portfolio", href: "https://www.ashishranjan.net/", icon: FiGlobe },
+    { label: "GitHub", href: "https://github.com/a2rp", icon: FaGithub },
+    { label: "CodePen", href: "https://codepen.io/ash1198", icon: FiCode },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/aashishranjan", icon: FaLinkedinIn },
+    { label: "Facebook", href: "https://www.facebook.com/theash.ashish/", icon: FaFacebookF },
+    { label: "YouTube", href: "https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1", icon: FaYoutube },
+    { label: "Email", href: "mailto:ash.ranjan09@gmail.com", icon: FiMail },
+    { label: "Support", href: "https://a2rp-donation-page.netlify.app/", icon: FiLifeBuoy },
+    { label: "Buy Me a Coffee", href: "https://buymeacoffee.com/a2rp", icon: FiCoffee },
+    { label: "Patreon", href: "https://www.patreon.com/a2rp", icon: SiPatreon },
+];
 
 const getDatePart = (parts, type) => {
     return parts.find((part) => part.type === type)?.value || "";
@@ -734,6 +750,21 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
                             →
                         </Styled.NavButton>
                     </Styled.Navigation>
+
+                    <Styled.FooterLinks aria-label="Social and support links">
+                        {footerLinks.map(({ label, href, icon: Icon }) => (
+                            <Styled.FooterLink
+                                key={label}
+                                href={href}
+                                aria-label={label}
+                                title={label}
+                                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                            >
+                                <Icon aria-hidden="true" />
+                            </Styled.FooterLink>
+                        ))}
+                    </Styled.FooterLinks>
                 </Styled.BottomBar>
             </Styled.Shell>
 
