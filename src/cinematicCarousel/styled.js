@@ -288,7 +288,7 @@ export const Styled = {
         width: min(100%, 1680px);
         min-height: 100vh;
         margin: 0 auto;
-        padding: clamp(22px, 2.8vw, 48px) clamp(20px, 4vw, 72px);
+        padding: calc(clamp(22px, 2.8vw, 48px) + 72px) clamp(20px, 4vw, 72px) clamp(22px, 2.8vw, 48px);
         flex-direction: column;
     `,
 
@@ -1139,6 +1139,38 @@ export const Styled = {
         }
     `,
 
+    GoToTop: styled.button`
+        position: fixed;
+        right: clamp(18px, 3vw, 44px);
+        bottom: clamp(18px, 3vw, 40px);
+        z-index: 80;
+        display: grid;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--accent);
+        border-radius: 50%;
+        color: #050607;
+        background: var(--accent-strong);
+        box-shadow: 0 0 22px var(--accent-soft);
+        place-items: center;
+        cursor: pointer;
+
+        &.is-hidden {
+            display: none;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: #ffffff;
+            box-shadow: 0 0 28px var(--accent);
+            outline: none;
+        }
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    `,
     DeveloperModalBackdrop: styled.div`
         position: fixed;
         inset: 0;

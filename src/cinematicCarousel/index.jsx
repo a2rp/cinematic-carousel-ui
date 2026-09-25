@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FaFacebookF, FaGithub, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import { FiCode, FiCoffee, FiGlobe, FiLifeBuoy, FiMail } from "react-icons/fi";
+import { FiArrowUp, FiCode, FiCoffee, FiGlobe, FiLifeBuoy, FiMail } from "react-icons/fi";
 import { SiPatreon } from "react-icons/si";
 import { carouselSlides } from "./data";
 import { developerDetails } from "./developer";
@@ -109,6 +109,7 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
     const [direction, setDirection] = useState("next");
     const [isAutoPlayEnabled, setIsAutoPlayEnabled] = useState(true);
     const [isDeveloperModalOpen, setIsDeveloperModalOpen] = useState(false);
+    const [showGoToTop, setShowGoToTop] = useState(false);
 
     const [repositoryActivity, setRepositoryActivity] = useState({
         status: "idle",
@@ -124,6 +125,17 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
     const developerCloseButtonRef = useRef(null);
 
     const prefersReducedMotion = useReducedMotion();
+
+    useEffect(() => {
+        const updateGoToTop = () => {
+            setShowGoToTop(window.scrollY > 420);
+        };
+
+        window.addEventListener("scroll", updateGoToTop, { passive: true });
+        updateGoToTop();
+
+        return () => window.removeEventListener("scroll", updateGoToTop);
+    }, []);
 
     const slideCount = carouselSlides.length;
     const activeSlide = carouselSlides[activeIndex];
@@ -767,6 +779,16 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
                     </Styled.FooterLinks>
                 </Styled.BottomBar>
             </Styled.Shell>
+
+            <Styled.GoToTop
+                type="button"
+                className={showGoToTop ? "is-visible" : "is-hidden"}
+                aria-label="Go to top"
+                title="Go to top"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+                <FiArrowUp aria-hidden="true" />
+            </Styled.GoToTop>
 
             {isDeveloperModalOpen && (
                 <Styled.DeveloperModalBackdrop

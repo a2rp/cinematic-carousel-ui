@@ -10,7 +10,7 @@ A responsive React carousel with cinematic imagery, autoplay, keyboard controls,
 - Previous, next, keyboard, swipe, and preview navigation
 - Responsive cinematic layout with local image assets
 - Accessible modal with focus handling and repository activity
-- Icon-only social and support links in the footer
+- Fixed branded header, icon-only footer links, and a floating go-to-top control
 
 ## Tech stack
 
