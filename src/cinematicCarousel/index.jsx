@@ -399,7 +399,7 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
             showSlide(slideCount - 1);
         }
 
-        if (event.key === " ") {
+        if (event.key === " " && !prefersReducedMotion) {
             event.preventDefault();
 
             setIsAutoPlayEnabled((currentValue) => !currentValue);
@@ -516,15 +516,16 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
 
                     <Styled.AutoPlayButton
                         type="button"
-                        className={
-                            isAutoPlayEnabled ? "is-playing" : "is-paused"
-                        }
-                        aria-pressed={isAutoPlayEnabled}
+                        className={isAutoPlayPaused ? "is-paused" : "is-playing"}
+                        aria-pressed={!isAutoPlayPaused}
                         aria-label={
-                            isAutoPlayEnabled
-                                ? "Pause automatic slide playback"
-                                : "Start automatic slide playback"
+                            prefersReducedMotion
+                                ? "Automatic slide playback is disabled because reduced motion is enabled"
+                                : isAutoPlayPaused
+                                  ? "Resume automatic slide playback"
+                                  : "Pause automatic slide playback"
                         }
+                        disabled={prefersReducedMotion}
                         onClick={() => {
                             setIsAutoPlayEnabled(
                                 (currentValue) => !currentValue,
@@ -532,11 +533,11 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
                         }}
                     >
                         <Styled.AutoPlayIcon aria-hidden="true">
-                            {isAutoPlayEnabled ? "Ⅱ" : "▶"}
+                            {isAutoPlayPaused ? "▶" : "Ⅱ"}
                         </Styled.AutoPlayIcon>
 
                         <Styled.AutoPlayText>
-                            {isAutoPlayEnabled ? "Playing" : "Paused"}
+                            {isAutoPlayPaused ? "Paused" : "Playing"}
                         </Styled.AutoPlayText>
                     </Styled.AutoPlayButton>
                 </Styled.TopBar>

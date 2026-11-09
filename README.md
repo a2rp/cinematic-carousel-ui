@@ -2,7 +2,7 @@
 
 A responsive React carousel with cinematic imagery, autoplay, keyboard controls, swipe navigation, reduced-motion support, and a developer details modal.
 
-![Cinematic Carousel UI screenshot](screenshot.png)
+![Cinematic Carousel UI preview](preview.png)
 
 ## Features
 
