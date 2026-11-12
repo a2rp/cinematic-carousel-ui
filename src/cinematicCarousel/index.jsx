@@ -140,7 +140,8 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
     const slideCount = carouselSlides.length;
     const activeSlide = carouselSlides[activeIndex];
 
-    const isAutoPlayPaused = !isAutoPlayEnabled || prefersReducedMotion;
+    const isAutoPlayPaused =
+        !isAutoPlayEnabled || prefersReducedMotion || isDeveloperModalOpen;
 
     const showNext = useCallback(() => {
         setDirection("next");
@@ -201,12 +202,13 @@ const CinematicCarousel = ({ onPrimaryAction, onSecondaryAction }) => {
     }, []);
 
     useEffect(() => {
-        carouselSlides.forEach((slide) => {
-            const image = new Image();
+        const nextSlide = carouselSlides[(activeIndex + 1) % slideCount];
 
-            image.src = slide.image;
-        });
-    }, []);
+        if (!nextSlide) return undefined;
+
+        const image = new Image();
+        image.src = nextSlide.image;
+    }, [activeIndex, slideCount]);
 
     useEffect(() => {
         if (isAutoPlayPaused || slideCount <= 1) {
